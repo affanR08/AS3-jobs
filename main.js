@@ -8,14 +8,14 @@ jobList.forEach(job => {
     jobElement.innerHTML = `
     <div class="row g-0">
       <div class="col-md-2">
-        <img src="${job.img}" class="img rounded-start card-img" alt="...">
+        <img src="${job.img}" class="img rounded-start card-img mx-auto img-fluid" alt="...">
       </div>
       <div class="col-md-10">
         <div class="card-body">
         <div class="d-flex justify-content-between">
           <h5 class="card-title" id="jobs">${job.title}</h5>
-          <h6 class="card-title end align-middle">RP <span id="salary">${job.salary}</span> - RP <span id="maxsalary">${job.maxSalary}</span> per-month</h6>
-          </div>
+          <button class="btn btn-border-primary"><h6 class="card-title end align-middle">RP <span id="salary">${job.salary}</span> - RP <span id="maxsalary">${job.maxSalary}</span> per-month</h6>
+          </div></button>
           <h6 class="card-title text-secondary" id="company">${job.company}</h6>
           <p class="card-text">${job.description}</p>
           <p class="card-footer"><small class="text-body-secondary" id="location">${job.location}</small></p>
