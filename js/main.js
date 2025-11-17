@@ -3,7 +3,7 @@ const container = document.getElementById("job-container");
 
 jobList.forEach(job => {
     const jobElement = document.createElement("div");
-    jobElement.className = "card mb-3 mx-auto rounded";
+    jobElement.className = "card mb-3 mx-auto rounded contact";
     jobElement.style.width = "100%";
     jobElement.innerHTML = `
     <div class="row g-0">
@@ -17,13 +17,50 @@ jobList.forEach(job => {
           <button class="btn btn-border-primary"><h6 class="card-title end align-middle">RP <span id="salary">${job.salary}</span> - RP <span id="maxsalary">${job.maxSalary}</span> per-month</h6>
           </div></button>
           <h6 class="card-title text-secondary" id="company">${job.company}</h6>
-          <p class="card-text">${job.description}</p>
-          <p class="card-footer"><small class="text-body-secondary" id="location">${job.location}</small></p>
+          <p class="card-text desc">${job.description}</p>
+          <p class="card-footer"><small class="text-body-secondary" id="location">${job.location}</small><div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="button" class="btn btn-primary me-md-2" data-bs-toggle="modal" data-bs-target="#${job.id}">
+  Overview
+</button>
+</div></p>
         </div>
       </div>
     </div>
     `;
+    
     container.appendChild(jobElement);
+});
+const modalContainer = document.getElementById("modal-container");
+jobList.forEach(job => {
+  const modalElement = document.createElement("div");
+  modalElement.innerHTML=`<div class="modal fade" id="${job.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="${job.id}Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="${job.id}Label">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+              <div class="card" style="width: 100%">
+  <img src="${job.img}" class="card-img-top" alt="..." style="width:50%">
+  <div class="card-body">
+    <h5 class="card-title" id="jobs">${job.title}</h5>
+    <button class="btn btn-border-primary"><h6 class="card-title">RP <span id="salary">${job.salary}</span> - RP <span id="maxsalary">${job.maxSalary}</span> per-month</h6>
+          </button>
+          <hr/>
+    <p class="card-text desc">${job.description}</p>
+    <p class="card-footer">${job.location}</p>
+  </div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>`
+  modalContainer.appendChild(modalElement);
 });
 document.getElementById('searchInput').addEventListener('input', function () {
   const keyword = this.value.toLowerCase();
@@ -77,16 +114,16 @@ function filterJobs() {
     }
   });
 }
-// Ambil path dari URL saat ini (misalnya: 'jobs.html')
+
 const currentPage = window.location.pathname.split("/").pop();
 
-// Ambil semua link di navbar
+
 const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
 navLinks.forEach(link => {
   const linkPage = link.getAttribute("href");
 
-  // Bandingkan dengan halaman saat ini
+  
   if (window.location.href.includes(linkPage))
  {
     link.classList.add("active");
