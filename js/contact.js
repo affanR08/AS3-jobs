@@ -6,17 +6,17 @@ const contactlist = [
   },
   {
     judul:"Email",
-    contact:"affanrabbani19@gmail.com",
+    contact:`<a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=affanrabbani19@gmail.com" target="_blank" rel="nofollow noopener" title="Send email with Gmail">send email</a>`,
     icon:'bx bxl-gmail mx-1'
   },
   {
     judul:"Github",
-    contact: "affanR08.github.io",
+    contact: `<a href="https://github.com/affanR08">affanR08</a>`,
     icon:'bx bxl-github mx-1'
   },
   {
     judul:"LinkedIn",
-    contact: `<a href=>https://www.linkedin.com/in/feint-ii/</a>`,
+    contact: `<a href="https://www.linkedin.com/in/feint-ii/">Affan rabbani</a>`,
     icon:'bx bxl-linkedin-square mx-1'
   },
   {

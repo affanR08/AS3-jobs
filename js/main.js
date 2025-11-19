@@ -18,7 +18,10 @@ jobList.forEach(job => {
           </div></button>
           <h6 class="card-title text-secondary" id="company">${job.company}</h6>
           <p class="card-text desc">${job.description}</p>
-          <p class="card-footer"><small class="text-body-secondary" id="location">${job.location}</small><div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <p class="card-footer"><small class="text-body-secondary" id="location">${job.location}</small>
+          <p class"card-footer fs-5" id="Type">${job.type}</P>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          
           <button type="button" class="btn btn-primary me-md-2" data-bs-toggle="modal" data-bs-target="#${job.id}">
   Overview
 </button>
@@ -80,14 +83,17 @@ document.getElementById('searchInput').addEventListener('input', function () {
 });
 document.getElementById('filterLocation').addEventListener('change', filterJobs);
 document.getElementById('filterSalary').addEventListener('change', filterJobs);
+document.getElementById('filterJobs').addEventListener('change', filterJobs);
 
 function filterJobs() {
   const locationValue = document.getElementById('filterLocation').value.toLowerCase();
+  const jobsValue = document.getElementById('filterJobs').value.toLowerCase();
   const salaryValue = document.getElementById('filterSalary').value;
   const jobCards = document.querySelectorAll('#job-container .card');
 
   jobCards.forEach(card => {
     const location = card.querySelector('#location')?.textContent.toLowerCase() || '';
+    const jobsType = card.querySelector('#Type')?.textContent.toLowerCase() || '';
     const salaryText = card.querySelector('#salary')?.textContent.replace(/[^\d]/g, '') || '0';
     const maxSalaryText = card.querySelector('#maxsalary')?.textContent.replace(/[^\d]/g, '') || '0';
 
@@ -95,6 +101,7 @@ function filterJobs() {
     const maxSalary = parseInt(maxSalaryText);
 
     let locationMatch = !locationValue || location.includes(locationValue);
+    let jobsMatch = !jobsValue || jobsType.includes(jobsValue);
     let salaryMatch = true;
 
     if (salaryValue === '<7000000') {
@@ -106,7 +113,7 @@ function filterJobs() {
       salaryMatch = maxSalary > 8000000;
     }
 
-    if (locationMatch && salaryMatch) {
+    if (locationMatch && salaryMatch && jobsMatch) {
       card.style.display = 'block';
       card.classList.add('animate__animated', 'animate__fadeIn');
     } else {

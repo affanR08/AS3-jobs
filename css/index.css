@@ -1,0 +1,48 @@
+body{
+    animation: back 3s infinite linear;
+    transition: filter 0.5s;
+    background: #ffffff;   
+    background: url(../img/wp.jpg);
+    background-size: 100%;
+    color: #ffffff;
+    background-clip: border-box;
+
+}
+@keyframes back{
+    to{
+        background-position: none;
+    }
+}
+.header-container {
+      display: flex;
+      justify-content: center; 
+      align-items: center;   
+      height: 85.2vh;
+      min-width: 90vw;          
+      background-color: #f0f0f000;
+    }
+.trans{
+    backdrop-filter: blur(5px);
+    background-color: 
+    rgba(0, 0, 0, 0.678);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.nav-link{
+    color: #ffffff;
+}
+.nav-link.active{
+    color: rgb(0, 111, 238)!important;
+}
+.nav-link:hover{
+    color:rgb(0, 111, 238);
+}
+.form-control{
+    justify-content: space-between;
+}
+input{
+    border: 0;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row-reverse;
+    
+}

@@ -7,6 +7,7 @@ const jobList = [
     title: "IT Customer Support",
     company: "PT Fata Organa Solusi",
     location: "Tangerang, Banten (Jarak jauh)",
+    type: "remote",
     description: "We are looking for a highly motivated, disciplined, and proactive IT Customer Support to join our team. The ideal candidate will have a strong understanding of software testing principles and practices and must be a highly independent, committed, and self-motivated individual with a strong sense of accountability for their time and responsiveness while working remotely."
   },
   {
@@ -17,6 +18,7 @@ const jobList = [
     title: "R&D Hardware",
     company: "PT LG ELectronics Indonesia ",
     location: "Bekasi, Jawa Barat",
+    type: "full-time",
     description: "Responsibility:, Manage New Product project for Monitor & TV Signage product, Responsible for Hardware Engineering, Troubleshooting  Quality & Mass Production, Handle BOM (Build Of Material) & engineering change creation, Field Claim supporting issue, Software management distribution, Support PCBA Part for issue from vendor"
   },
   {
@@ -27,7 +29,19 @@ const jobList = [
     title: "IT Overnight Supervisor",
     company: "PT Sukanda Djaya ",
     location: "Cibitung, Jawa Barat",
+    type: "full-time",
     description: "Key Responsibilities, Supervise and coordinate the overnight IT support team, ensuring smooth system operations and timely issue resolution.Monitor network performance, servers, and connected IoT systems for uptime, stability, and anomalies. Troubleshoot and maintain hardware and software systems, including IoT devices and microcontroller-based equipment."
+  },
+  {
+    id:"berkat",
+    salary:3900000,
+    maxSalary:4500000,
+    img : "img/berkat.png",
+    title: "IT Support",
+    company: "PT. Berkat maritim Abadi",
+    location: "Barito Utara, kalimantan Tengah",
+    type: "full-time",
+    description: "Responsibilities:, Provide technical support to end-users for hardware, software, and network-related issues., Install, configure, and maintain computer systems, software applications, and peripheral devices., Troubleshoot and resolve IT-related problems in a timely manner."
   }
 ];
 export { jobList };

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 </head>
@@ -31,7 +32,7 @@
         </li>
       </ul>
       <div class="d-flex">
-     <button class="btn border-primary mx-2">sign in</button>
+     <button class="btn border-primary mx-2 text-white">sign in</button>
      <button class="btn btn-primary">Sign up</button>
      </div>
     </div>
@@ -42,13 +43,71 @@
     <img src="img/somecarrer.png.png" class="img-fluid" alt="">
     <hr>
     <div class="container">
-    <h1 class="mb-3">Contact</h1>
+    <h1 class="mb-5 text-white">Contact</h1>
+    <button type="button" class="btn btn-primary m-5 p-3 fs-4" data-bs-toggle="modal" data-bs-target="#exampleModal1">Contact Me</button>
     
               <div class="row row-cols-1 row-cols-md-2 g-4" id="contact">
 </div>
     </div>
     </div>
-<footer class="footer trans mt-5"><p>©SomeCarrer, Affan rabbani. 2025</p></footer>
+<footer class="footer mt-5"><p>©SomeCarrer, Affan rabbani. 2025</p></footer>
+<div id="modal-container">
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModal1Label">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <div class="container">
+        <div class="contact-box">
+            <h1>Contact Me</h1>
+            <p class="subtitle">Isi form di bawah ini untuk mengirim pesan kepada kami</p>
+            
+            <form action="https://formsubmit.co/affanrabbani19@gmail.com" method="POST" class="form">
+                <!-- Nama -->
+                <div class="form-control">
+                    <label for="name">Nama Lengkap <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap Anda" required>
+                </div>
+                
+                <!-- Email -->
+                <div class="form-control">
+                    <label for="email">Alamat Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="nama@example.com" required>
+                </div>
+                
+                <!-- Subjek -->
+                <div class="form-control">
+                    <label for="subject">Subjek</label>
+                    <input type="text" id="subject" name="_subject" placeholder="Topik pesan Anda">
+                </div>
+                
+                <!-- Pesan -->
+                <div class="form-control">
+                    <label for="message">Pesan <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="3" cols="50" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                </div>
+                
+                <!-- Hidden Fields untuk FormSubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://affanr08.github.io/AS3-jobs/contact.html">
+                <input type="hidden" name="_template" value="table">
+                
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        <span>Kirim Pesan</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+      </div>
+     
+    </div>
+  </div>
 </body>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>

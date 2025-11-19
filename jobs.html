@@ -31,8 +31,8 @@
         </li>
       </ul>
       <div class="d-flex">
-     <button class="btn border-primary mx-2">sign in</button>
-     <button class="btn btn-primary">Sign up</button>
+     <button type="button" class="btn border-primary mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal1">sign in</button>
+     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">Sign up</button>
      </div>
     </div>
      
@@ -46,26 +46,34 @@
         </div>
     </header> <hr>
     <div class="text-center my-5 trans">
-        <h2>Jobs list</h2>
+        <h1 class="pt-5">JOBS LIST</h1>
             <div class="container mt-4 p-3 border rounded my-5">
   <input type="text" id="searchInput" class="form-control  border-secondary" placeholder="Search jobs by title, company or location ...">
 </div>
 <div class="container mt-4">
   <div class="row g-3">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <select id="filterLocation" class="form-select">
         <option value="">Location (none)</option>
         <option value="Tangerang">Tangerang</option>
         <option value="Bekasi">Bekasi</option>
         <option value="Cibitung">Cibitung</option>
+        <option value="kalimantan tengah">kalimantan tengah</option>
       </select>
     </div>
-    <div class="col-md-6 mb-3">
+    <div class="col-md-4 mb-3">
       <select id="filterSalary" class="form-select">
         <option value="">Salary (none)</option>
         <option value="<7000000">Below Rp 7.000.000</option>
         <option value="7000000-8000000">Rp 7.000.000 – Rp 8.000.000</option>
         <option value=">8000000">Above Rp 8.000.000</option>
+      </select>
+    </div>
+    <div class="col-md-4 mb-3">
+      <select id="filterJobs" class="form-select">
+        <option value="">Jobs Type (none)</option>
+        <option value="remote">Remote</option>
+        <option value="full-time">Full-time</option>
       </select>
     </div>
   </div>
@@ -76,7 +84,41 @@
     </div>
 </div>
 <footer class="footer"><p>©SomeCarrer, Affan rabbani. 2025</p></footer>
-<div id="modal-container"></div>
+<div id="modal-container">
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModal1Label">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div><div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModal2Label">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 </body>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script type="module" src="js/main.js"></script>
