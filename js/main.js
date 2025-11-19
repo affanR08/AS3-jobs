@@ -45,11 +45,18 @@ jobList.forEach(job => {
       </div>
       <div class="modal-body">
               <div class="card" style="width: 100%">
-  <img src="${job.img}" class="card-img-top" alt="..." style="width:50%">
+  
   <div class="card-body">
+  <div class="d-flex flex-row align-items-center mb-3">
+  <img src="${job.img}" class="card-img-top" alt="..." style="width: 200px; height: 200px; object-fit: contain;">
+    <div class="d-flex flex-column align-items-start ms-3">
     <h5 class="card-title" id="jobs">${job.title}</h5>
+    <h6 class="card-title text-secondary" id="company">${job.company}</h6>
+  
     <button class="btn btn-border-primary"><h6 class="card-title">RP <span id="salary">${job.salary}</span> - RP <span id="maxsalary">${job.maxSalary}</span> per-month</h6>
           </button>
+          </div>
+          </div>
           <hr/>
     <p class="card-text desc">${job.description}</p>
     <p class="card-footer">${job.location}</p>

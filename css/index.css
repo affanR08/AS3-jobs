@@ -18,7 +18,7 @@ body{
       justify-content: center; 
       align-items: center;   
       height: 85.2vh;
-      min-width: 90vw;          
+      min-width: 100%;          
       background-color: #f0f0f000;
     }
 .trans{
@@ -45,4 +45,29 @@ input{
     display: flex;
     flex-direction: row-reverse;
     
+}
+.auto{
+    animation: autob both;
+    animation-timeline: view();
+}
+
+@keyframes autob{
+    from{
+        filter: blur(10px);
+        transform: translateY(-200px) scale(0);
+        opacity: 0.2;
+    }
+    50%{
+        transform: translateX(0)scale(1);
+        filter: blur(0);
+        opacity: 1;
+
+    }
+}
+@media only screen and (max-width: 768px) {
+    .auto{
+        display: flex!important;
+        flex-direction: column!important;
+        padding-bottom: 10px;
+    }
 }
